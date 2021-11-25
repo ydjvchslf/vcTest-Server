@@ -8,23 +8,26 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class apiController {
-    
-    @RequestMapping(value = "/api/test", method = RequestMethod.GET)
+
+    @RequestMapping(value = "/api/get", method = RequestMethod.GET)
     @ResponseStatus(value = HttpStatus.OK)
     public String getApiTest(){
-        //JSON 형식으로 만들어서 return
-        return "{\"result\":\"ok_get\"}";
+        return "{\"name\":\"mia\","
+                + "\"age\":31,"
+                + "\"phone\":\"010-2222-3333\","
+                + "\"status\":true"
+                + "}";
     }
 
-    @RequestMapping(value = "/api/test2", method = RequestMethod.POST)
+    @RequestMapping(value = "/api/post", method = RequestMethod.POST)
     @ResponseStatus(value = HttpStatus.OK)
-    public String postApiTest2(){
+    public String postApiTest(){
         return "{\"result\":\"ok_post\"}";
     }
 
-    @RequestMapping(value = "/api/test3", method = RequestMethod.PUT)
+    @RequestMapping(value = "/api/put", method = RequestMethod.PUT)
     @ResponseStatus(value = HttpStatus.OK)
-    public String putApiTest3(){
+    public String putApiTest(){
         return "{\"result\":\"ok_put\"}";
     }
 
